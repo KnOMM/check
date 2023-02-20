@@ -3,13 +3,14 @@
     --title-text-color: #212121;
     --accent-color: #2196F3;
     --bg-main-color: #2F303A;
-    --bg-second-color: #E5E5E5;
+    --bg-second-color: #ffffff;
     --bg-third-color: #F5F4FA;
 }
 
 body {
     font-family: Roboto, sans-serif;
     letter-spacing: 0.03em;
+    background-color: #ffffff;
 }
 
 h1,h2,h3{
@@ -68,15 +69,15 @@ ul {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    color: #ffffff;    
+    color: var(--bg-second-color);    
     text-transform: uppercase;    
 }
 
-.button {
+.hero>.hero-button {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;    
-    color: #ffffff;
+    color: var(--bg-second-color);
     background-color: var(--accent-color);    
 }
 
@@ -105,14 +106,14 @@ ul {
 }
 
 .logo.footer:hover, .logo.footer:focus {
-    color: #ffffff;
+    color: var(--bg-second-color);
 }
 
 .footer-link {    
     font-size: 14px;
     line-height: 1.71;
 /* or 171% */
-    color: #ffffff;
+    color: var(--bg-second-color);
 }
 
 
@@ -128,25 +129,34 @@ ul {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.footer-link:hover, .footer-link:focus{
+    color: var(--accent-color);
+}
+
 .current-page {
     color: var(--accent-color);
 }
 
 .header-bg {
-    background-color: #ffffff;
+    background-color: var(--bg-second-color);
 }
 
 .posters {
     background-color: var(--bg-second-color);
 }
 
-.button {
+.posters-button {
     font-family: Roboto, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
     background-color: var(--bg-third-color);
     color: var(--title-text-color);
+}
+
+.posters-button:hover, .posters-button:focus  {
+    background-color: var(--accent-color);
+    color: var(--bg-second-color);
 }
 
 .posters h2 {
