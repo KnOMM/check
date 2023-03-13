@@ -7,18 +7,74 @@
     --bg-third-color: #F5F4FA;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
 body {
     font-family: Roboto, sans-serif;
     letter-spacing: 0.03em;
     background-color: #ffffff;
+    padding: 0;
 }
 
-h1,h2,h3{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
     font-weight: 700;
     color: var(--title-text-color);
 }
 
-.logo{
+
+.header-bg {
+    height: 80px;
+
+    background-color: var(--bg-second-color);
+}
+
+.header-bg.line {
+    border-bottom: 1px solid #ECECEC;
+    ;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    /* outline: tomato solid 2px; */
+}
+
+.main-nav {
+    display: flex;
+}
+
+.main-nav>nav {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo {
+    margin-right: 93px;
+
     font-family: Raleaway, sans-serif;
     font-weight: 700;
     font-size: 26px;
@@ -30,7 +86,23 @@ h1,h2,h3{
     color: var(--bg-main-color)
 }
 
+nav>.list {
+    display: flex;
+}
+
+
+/* nav .item:not(:last-child) {
+    margin-right: 50px;
+} */
+
+nav .item+.item {
+    margin-left: 50px;
+}
+
 .nav-text {
+    display: block;
+    padding: 32px 0;
+
     color: var(--title-text-color);
     letter-spacing: 0.02em;
     font-weight: 500;
@@ -39,7 +111,8 @@ h1,h2,h3{
 
 }
 
-.nav-text:hover, .nav-text:focus {
+.nav-text:hover,
+.nav-text:focus {
     color: var(--accent-color);
 }
 
@@ -52,45 +125,103 @@ ul {
 }
 
 .nav-text.link {
+    /* outline: tomato solid 1px; */
+
     color: var(--primary-text-color);
 }
 
-.nav-text.link:hover, .nav-text.link:focus {
+.nav-text.link:hover,
+.nav-text.link:focus {
     color: var(--accent-color);
 }
 
+.contact-links {
+    display: flex;
+    margin-left: auto;
+}
+
+.contact-links>.item:not(:last-child) {
+    margin-right: 40px;
+}
+
 .hero {
+    padding: 200px 0;
+
     text-align: center;
-    background-color: var(--bg-main-color);    
+    background-color: var(--bg-main-color);
     letter-spacing: 0.06em;
 }
 
-.hero-title{
+.hero-title {
+    vertical-align: middle;
+    margin-bottom: 30px;
+
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    color: var(--bg-second-color);    
-    text-transform: uppercase;    
-}
-
-.hero>.hero-button {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;    
     color: var(--bg-second-color);
-    background-color: var(--accent-color);    
-}
-
-.advantages-title {
-    font-size: 14px;
-    line-height: 1.14px;
     text-transform: uppercase;
 }
 
-.advantages-text{
+.hero>.hero-button {
+    min-width: 200px;
+    padding: 10px 20px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    text-align: center;
+
+    color: var(--bg-second-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+}
+
+.hero>.hero-button:hover {
+    background-color: #1c81d4
+}
+
+section>.container,
+main>.container {
+    padding: 94px 15px;
+}
+
+section .section-title {
+    margin-bottom: 50px;
+}
+
+.container>.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.advantages-title {
+    /* background-color: tomato; */
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.advantages-text {
     font-size: 14px;
     line-height: 1.71;
     color: var(--primary-text-color);
+}
+
+.container.hidden {
+    padding-bottom: 0;
+}
+
+.feature-list>.item {
+    width: 270px;
+    margin-right: 30px;
+}
+
+.feature-list>.item:nth-child(4n) {
+    margin-right: 0;
 }
 
 .section-title {
@@ -99,20 +230,53 @@ ul {
     text-align: center;
 }
 
+.vocation-list>.item {
+    width: 370px;
+    margin-right: 30px;
+}
+
+.vocation-list>.item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.team-list>.item {
+    width: 270px;
+    margin-right: 30px;
+    background: #FFFFFF;
+    /* material shadow v1 */
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team-list>.item:nth-child(4n) {
+    margin-right: 0;
+}
+
+.team-list .text {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.team-list h3 {
+    padding-bottom: 10px;
+}
+
 .footer {
-    
-    
+
+
     background-color: var(--bg-main-color);
 }
 
-.logo.footer:hover, .logo.footer:focus {
+.logo.footer:hover,
+.logo.footer:focus {
     color: var(--bg-second-color);
 }
 
-.footer-link {    
+.footer-link {
     font-size: 14px;
     line-height: 1.71;
-/* or 171% */
+    /* or 171% */
     color: var(--bg-second-color);
 }
 
@@ -125,11 +289,16 @@ ul {
     background-color: var(--bg-third-color);
 }
 
+footer>.container {
+    padding: 60px 15px;
+}
+
 .footer-link.contact {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-link:hover, .footer-link:focus{
+.footer-link:hover,
+.footer-link:focus {
     color: var(--accent-color);
 }
 
@@ -137,26 +306,62 @@ ul {
     color: var(--accent-color);
 }
 
-.header-bg {
-    background-color: var(--bg-second-color);
-}
-
 .posters {
     background-color: var(--bg-second-color);
 }
 
-.posters-button {
+.button-list {
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.button-list>.item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.poster-button {
+    padding: 6px 22px;
+
     font-family: Roboto, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
     background-color: var(--bg-third-color);
     color: var(--title-text-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    border: none;
 }
 
-.posters-button:hover, .posters-button:focus  {
+.poster-button:hover,
+.poster-button:focus {
     background-color: var(--accent-color);
     color: var(--bg-second-color);
+}
+
+.poster-board {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.poster-board>.item {
+    border: 1px solid #EEEEEE;
+}
+
+.poster-board>.item:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.poster-board>.item:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+}
+
+.poster-board>.item {
+    width: 370px;
+}
+
+.poster-board .item-text {
+    padding: 20px 24px;
 }
 
 .posters h2 {
