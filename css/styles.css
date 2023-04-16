@@ -146,16 +146,25 @@ ul {
 
 .hero {
     padding: 200px 0;
-
+    height: 600px;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     background-color: var(--bg-main-color);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url('../images/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     letter-spacing: 0.06em;
 }
 
 .hero-title {
     vertical-align: middle;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
 
+    height: 120px;
+    width: 700px;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -197,12 +206,59 @@ section .section-title {
     flex-wrap: wrap;
 }
 
+.icon-svg{
+    display: inline;
+    fill:red;
+    width: 10px;
+    height: 10px;
+}
+
+.tel-icons {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.check{
+    width: 20px;
+    height: 20px;
+}
+
 .advantages-title {
     /* background-color: tomato; */
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 10px;
+}
+
+.advantages-title::before {
+    content: "";
+    margin-bottom: 30px;
+    display: block;
+    height: 120px;
+    background-color: #F5F4FA;
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.advantages-title.antenna::before {
+    background-image: url("../images/antenna\ 1.svg");    
+}
+
+.advantages-title.clock::before{
+    background-image: url("../images/clock\ 1.svg");
+}
+
+.advantages-title.diagram::before{
+    background-image: url("../images/diagram\ 1.svg");
+}
+
+.advantages-title.astronaut::before{
+    background-image: url("../images/astronaut\ 1.svg");
 }
 
 .advantages-text {
@@ -375,7 +431,7 @@ footer>.container {
 
 .posters h2 {
     margin-bottom: 4px;
-    
+
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
